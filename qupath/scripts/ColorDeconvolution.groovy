@@ -1,0 +1,1 @@
+setColorDeconvolutionStains('{"Name" : "H-DAB_estimated_VEGFC_TMA", "Stain 1" : "Hematoxylin", "Values 1" : "0.73111 0.59519 0.33351", "Stain 2" : "DAB", "Values 2" : "0.34211 0.5857 0.73479", "Background" : " 236 231 227"}');

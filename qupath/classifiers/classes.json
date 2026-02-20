@@ -1,0 +1,32 @@
+{
+  "pathClasses": [
+    {
+      "name": "Tumor_cells",
+      "color": -65281
+    },
+    {
+      "name": "VEGF_high",
+      "color": -13970719
+    },
+    {
+      "name": "VEGF_low",
+      "color": -179
+    },
+    {
+      "name": "Not_TC_size",
+      "color": -15060071
+    },
+    {
+      "name": "Not_TC_eccentricity",
+      "color": -812782
+    },
+    {
+      "name": "High_HematoX",
+      "color": -10773456
+    },
+    {
+      "name": "Low_HematoX",
+      "color": -556058
+    }
+  ]
+}

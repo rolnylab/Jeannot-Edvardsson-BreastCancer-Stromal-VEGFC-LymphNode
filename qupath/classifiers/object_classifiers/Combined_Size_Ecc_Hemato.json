@@ -1,0 +1,213 @@
+{
+  "object_classifier_type": "CompositeClassifier",
+  "classifiers": [
+    {
+      "object_classifier_type": "OpenCVMLClassifier",
+      "featureExtractor": {
+        "feature_extractor_type": "NormalizedFeatureExtractor",
+        "featureExtractor": {
+          "feature_extractor_type": "DefaultFeatureExtractor",
+          "measurements": [
+            "Nucleus: Area",
+            "Nucleus: Hematoxylin OD mean"
+          ]
+        },
+        "normalizer": {
+          "offsets": [
+            0.0,
+            0.0
+          ],
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "missingValue": 0.0
+        }
+      },
+      "classifier": {
+        "class": "ANN_MLP",
+        "statmodel": {
+          "opencv_ml_ann_mlp": {
+            "format": 3,
+            "layer_sizes": [
+              2,
+              2
+            ],
+            "activation_function": "SIGMOID_SYM",
+            "f_param1": 1.0,
+            "f_param2": 1.0,
+            "min_val": -9.4999999999999996e-01,
+            "max_val": 9.4999999999999996e-01,
+            "min_val1": -9.7999999999999998e-01,
+            "max_val1": 9.7999999999999998e-01,
+            "training_params": {
+              "train_method": "RPROP",
+              "dw0": 1.0000000000000001e-01,
+              "dw_plus": 1.2000000000000000e+00,
+              "dw_minus": 5.0000000000000000e-01,
+              "dw_min": 1.1920928955078125e-07,
+              "dw_max": 50.0,
+              "term_criteria": {
+                "epsilon": 1.0000000000000000e-02,
+                "iterations": 1000
+              }
+            },
+            "input_scale": [
+              6.1192531572286615e-02,
+              -1.8886924396347970e+00,
+              9.1580220035000952e+00,
+              -2.8047857426541771e+00
+            ],
+            "output_scale": [
+              1.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "inv_output_scale": [
+              1.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "weights": [
+              [
+                -3.7363445484008944e+00,
+                3.8934497998414246e+00,
+                1.0950918146292692e+00,
+                -1.2010766759440186e+00,
+                -1.6106968921877167e+00,
+                1.8008260311425814e+00
+              ]
+            ]
+          }
+        }
+      },
+      "pathClasses": [
+        {
+          "name": "High_HematoX",
+          "color": [
+            91,
+            156,
+            48
+          ]
+        },
+        {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        }
+      ],
+      "requestProbabilityEstimate": false,
+      "filter": "DETECTIONS_ALL",
+      "timestamp": 1729153332883
+    },
+    {
+      "object_classifier_type": "SimpleClassifier",
+      "function": {
+        "classifier_fun": "ClassifyByMeasurementFunction",
+        "measurement": "Nucleus: Eccentricity",
+        "pathClassBelow": {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        },
+        "pathClassEquals": {
+          "name": "Not_TC_eccentricity",
+          "color": [
+            243,
+            153,
+            18
+          ]
+        },
+        "pathClassAbove": {
+          "name": "Not_TC_eccentricity",
+          "color": [
+            243,
+            153,
+            18
+          ]
+        },
+        "threshold": 0.8985441937068132
+      },
+      "pathClasses": [
+        {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        },
+        {
+          "name": "Not_TC_eccentricity",
+          "color": [
+            243,
+            153,
+            18
+          ]
+        }
+      ],
+      "filter": "DETECTIONS_ALL",
+      "timestamp": 1727958204422
+    },
+    {
+      "object_classifier_type": "SimpleClassifier",
+      "function": {
+        "classifier_fun": "ClassifyByMeasurementFunction",
+        "measurement": "Nucleus: Area",
+        "pathClassBelow": {
+          "name": "Not_TC_size",
+          "color": [
+            213,
+            10,
+            154
+          ]
+        },
+        "pathClassEquals": {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        },
+        "pathClassAbove": {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        },
+        "threshold": 14.0
+      },
+      "pathClasses": [
+        {
+          "name": "Not_TC_size",
+          "color": [
+            213,
+            10,
+            154
+          ]
+        },
+        {
+          "name": "Tumor_cells",
+          "color": [
+            44,
+            204,
+            137
+          ]
+        }
+      ],
+      "filter": "DETECTIONS_ALL",
+      "timestamp": 1727958869230
+    }
+  ]
+}
