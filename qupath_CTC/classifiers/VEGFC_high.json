@@ -1,0 +1,132 @@
+{
+  "object_classifier_type": "OpenCVMLClassifier",
+  "featureExtractor": {
+    "feature_extractor_type": "NormalizedFeatureExtractor",
+    "featureExtractor": {
+      "feature_extractor_type": "DefaultFeatureExtractor",
+      "measurements": [
+        "Nucleus: DAB OD mean",
+        "Nucleus: DAB OD sum",
+        "Nucleus: DAB OD std dev",
+        "Nucleus: DAB OD max",
+        "Nucleus: DAB OD min",
+        "Nucleus: DAB OD range"
+      ]
+    },
+    "normalizer": {
+      "offsets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "missingValue": 0.0
+    }
+  },
+  "classifier": {
+    "class": "ANN_MLP",
+    "statmodel": {
+      "opencv_ml_ann_mlp": {
+        "format": 3,
+        "layer_sizes": [
+          6,
+          2
+        ],
+        "activation_function": "SIGMOID_SYM",
+        "f_param1": 1.0,
+        "f_param2": 1.0,
+        "min_val": -9.4999999999999996e-01,
+        "max_val": 9.4999999999999996e-01,
+        "min_val1": -9.7999999999999998e-01,
+        "max_val1": 9.7999999999999998e-01,
+        "training_params": {
+          "train_method": "RPROP",
+          "dw0": 1.0000000000000001e-01,
+          "dw_plus": 1.2000000000000000e+00,
+          "dw_minus": 5.0000000000000000e-01,
+          "dw_min": 1.1920928955078125e-07,
+          "dw_max": 50.0,
+          "term_criteria": {
+            "epsilon": 1.0000000000000000e-02,
+            "iterations": 1000
+          }
+        },
+        "input_scale": [
+          2.1451732037371283e+00,
+          -1.4173892838422644e+00,
+          1.3093092351719659e-02,
+          -1.1265233766774072e+00,
+          8.7915690152673935e+00,
+          -1.5582425541175866e+00,
+          1.2169156411678062e+00,
+          -1.4655924736495987e+00,
+          3.9356000873120252e+00,
+          -9.1331102764124428e-01,
+          1.4607850755671952e+00,
+          -1.4203010439368660e+00
+        ],
+        "output_scale": [
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "inv_output_scale": [
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "weights": [
+          [
+            4.0784672584518136e+00,
+            -3.8549088888077616e+00,
+            2.9768579071989348e-01,
+            -3.5186137020460551e-01,
+            2.7387090557228305e-01,
+            -6.4678797244183142e-02,
+            -2.1445157112173447e-02,
+            -1.7106872176339910e-01,
+            1.0888054645598165e-01,
+            -1.0185551495718612e-01,
+            1.4095426877825818e+00,
+            -1.6133155462454223e+00,
+            -1.8923095324075621e+00,
+            2.0596162113068974e+00
+          ]
+        ]
+      }
+    }
+  },
+  "pathClasses": [
+    {
+      "name": "VEGF_high",
+      "color": [
+        42,
+        210,
+        225
+      ]
+    },
+    {
+      "name": "VEGF_low",
+      "color": [
+        238,
+        66,
+        231
+      ]
+    }
+  ],
+  "requestProbabilityEstimate": false,
+  "filter": "DETECTIONS_ALL",
+  "timestamp": 1730713640646
+}

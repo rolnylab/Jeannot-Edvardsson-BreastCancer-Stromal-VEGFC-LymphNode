@@ -1,0 +1,1 @@
+setColorDeconvolutionStains('{"Name" : "H-DAB estimated", "Stain 1" : "Hematoxylin", "Values 1" : "0.71817 0.58684 0.37398", "Stain 2" : "DAB", "Values 2" : "0.2286 0.53372 0.81418", "Background" : " 235 230 226"}');

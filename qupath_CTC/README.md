@@ -1,5 +1,7 @@
 # Jeannot-Edvardsson-BreastCancer-Stromal-VEGFC-LymphNode
 
+CTC cohort:
+
 Color deconvolution has been applied on images with the ColorDeconvolution.groovy script
 
 TMA dearray has been done to identify the cores on the TMA using TMA_dearray_1_2_8.groovy, TMA_dearray_3_4_5_6_7_9.groovy or TMA_dearray_10.groovy scripts depending on slide's orientation and number of cores
